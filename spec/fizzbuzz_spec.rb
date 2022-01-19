@@ -15,6 +15,10 @@ describe 'fizzbuzz' do
     expect(fizzbuzz(6)).to eq 'fizz'
   end
 
+  it 'returns fizz when passed -3' do
+    expect(fizzbuzz(-3)).to eq 'fizz'
+  end
+
   it 'returns buzz when passed 5' do
     expect(fizzbuzz(5)).to eq 'buzz'
   end
@@ -30,4 +34,9 @@ describe 'fizzbuzz' do
   it 'returns 7 when passed 7' do
     expect(fizzbuzz(7)).to eq '7'
   end
+
+  it 'raises and NoMethodError when a string "hello" is passed' do
+    expect {fizzbuzz("hello")}.to raise_error(NoMethodError)
+  end
+
 end
